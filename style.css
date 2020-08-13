@@ -6,8 +6,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     line-height: 26px;
-    background-color: #000;
-    /*for visualization*/
 }
 
 .header {
@@ -18,6 +16,10 @@ body {
     justify-content: space-between;
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding: 0 10vw;
+}
+
+.container {
     margin: 0 10vw;
 }
 
@@ -47,6 +49,37 @@ body {
     padding: 6px 17px;
 }
 
+.land-content {
+    background: linear-gradient(180deg, #1c1c1c, #1c1c1c66 50%), center center / cover no-repeat url(img/eggs.jpg);
+    height: 90vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.75em;
+    font-weight: normal;
+    color: #C89446;
+}
+
+.name {
+    font-size: 4.3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 11px;
+    margin: .6em 0 .5em 0;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
 
 
 @media screen and (max-width: 905px) {
@@ -67,5 +100,9 @@ body {
 
     .nav-item {
         margin: 0;
+    }
+
+    .land-content {
+        font-size: 10px;
     }
 }
