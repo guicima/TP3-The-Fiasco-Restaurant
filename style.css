@@ -109,6 +109,9 @@ body {
 }
 
 /*Cards-texts*/
+.card-paragraphe {
+    font-size: 1em;
+}
 
 .card-yellowtitle {
     font-family: 'Pinyon Script', cursive;
@@ -197,6 +200,101 @@ body {
     transform: translateX(-50%);
 }
 
+/*recipes-list*/
+
+.recipes-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 16vw;
+}
+
+.recipes-list-link {
+    text-decoration: none;
+    color: #383838;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.recipes-list-link:hover,
+.recipes-list-link.active {
+    border-bottom: #C89446 1px solid;
+}
+
+/*Square recipes*/
+.square-recipes {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    min-height: 440px;
+    margin: 150px 10vw;
+
+}
+
+.square-recipes .card {
+    max-width: 550px;
+}
+
+.square-recipes .card .card-text {
+    display: flex;
+    flex-flow: column;
+    align-self: stretch;
+    justify-content: space-between;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.square-recipes .card .small-card-image {
+    margin-right: 32px;
+    height: 160px;
+}
+
+.square-recipes .right .small-card-image {
+    margin-left: 32px;
+    margin-right: 0px;
+}
+
+.square-recipes .right .card-text {
+    text-align: right;
+}
+
+.square-recipes .card .card-title {
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.square-recipes .card .card-yellowtitle::before {
+    display: none;
+}
+
+.background-square {
+    height: 450px;
+    width: 450px;
+    border: 1px #C89446 solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotateZ(45deg) translate(-75%, 0%);
+    z-index: -1;
+}
+
+.big-card .card {
+    margin: 0 10vw;
+}
+
+/*.card-image-chef {
+
+}*/
+
+@media screen and (max-width:1396px) {
+
+    .square-recipes {
+        justify-content: space-around;
+    }
+}
+
 @media screen and (max-width:1050px) {
     .card-image {
         height: auto;
@@ -258,7 +356,8 @@ body {
         padding: 5px;
     }
 
-    .main-content .card .image-border {
+    .main-content .card .image-border,
+    .recipes-list {
         transform: unset;
         margin: 0 0 20px 0;
     }
