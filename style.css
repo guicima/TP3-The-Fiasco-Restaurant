@@ -94,6 +94,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 80px;
+    position: relative;
 }
 
 .image-border {
@@ -284,9 +285,16 @@ body {
     margin: 0 10vw;
 }
 
-/*.card-image-chef {
+.big-card .card-text {
+    flex-shrink: 2;
+}
 
-}*/
+.card-image-chef {
+    height: 25vw;
+    min-height: 350px;
+    width: 400px;
+    background: left bottom / 150px no-repeat url("img/signature.png"), top / auto 105% no-repeat url("img/Chef.png");
+}
 
 @media screen and (max-width:1396px) {
 
@@ -360,5 +368,14 @@ body {
     .recipes-list {
         transform: unset;
         margin: 0 0 20px 0;
+    }
+
+    /*.card-image-chef {
+        background: left bottom / 150px no-repeat url("img/signature.png");
+    }*/
+
+    .big-card .card {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
