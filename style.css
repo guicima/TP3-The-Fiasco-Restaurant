@@ -296,10 +296,110 @@ body {
     background: left bottom / 150px no-repeat url("img/signature.png"), top / auto 105% no-repeat url("img/Chef.png");
 }
 
+/*----reservation-section----*/
+
+.reservation-section {
+    position: relative;
+    z-index: 1;
+    background: #242424;
+    padding: 100px;
+}
+
+.reservation-section .card {
+    margin-bottom: 0;
+}
+
+.reservation-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .4;
+    background: center / cover url("img/reservation.jpg");
+}
+
+.reservation-section .card-title {
+    color: #fff;
+}
+
+.reservation-form {
+    display: flex;
+    margin: 50px 0;
+    width: 60vw;
+    justify-content: space-between;
+}
+
+.reservation-form>* {
+    flex-basis: 18vw;
+    margin: 0 1vw;
+    height: 40px;
+    background: none;
+    padding: 5px;
+    border: solid #6f6f6f6f 2px;
+    border-radius: 3px;
+}
+
+.button {
+    background-color: #B78944;
+    border: solid #B78944 2px;
+    border-radius: 3px;
+    height: 40px;
+    width: 260px;
+}
+
+.button:hover {
+    background-color: #b7894494;
+
+}
+
+.button:active {
+    background-color: #b7894494;
+    border: solid #fabf65 2px;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.reservation-form>*,
+.button {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    font-size: .8em;
+}
+
+.reservation-form>*:hover {
+    background-color: #ffffff0a;
+}
+
+.reservation-form>*:focus {
+    background-color: #ffffff14;
+    border: solid #C89446 2px;
+}
+
+
+
+
+
 @media screen and (max-width:1396px) {
 
     .square-recipes {
         justify-content: space-around;
+    }
+
+    .reservation-form {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .reservation-form>* {
+        flex-basis: unset;
+        margin: 5px;
+        width: 50%;
+        min-width: 260px;
     }
 }
 
