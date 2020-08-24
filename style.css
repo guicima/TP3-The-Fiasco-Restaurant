@@ -1,5 +1,6 @@
 *,
-body {
+body,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,15 +33,16 @@ body {
     font-weight: normal;
     font-size: .8em;
     text-decoration: none;
+    transition: color .3s;
 }
 
 .nav-item {
     display: inline-block;
     padding: .2em .8em;
     margin: 25px 8px;
-    transition: color .3s;
 }
 
+.logo:hover,
 .nav-item:hover,
 .nav-item:active {
     color: #C89446;
@@ -93,8 +95,11 @@ body {
 .card {
     display: flex;
     align-items: center;
-    margin-bottom: 80px;
     position: relative;
+}
+
+.main-content .card {
+    margin-bottom: 80px;
 }
 
 .image-border {
@@ -281,8 +286,9 @@ body {
     z-index: -1;
 }
 
-.big-card .card {
+.big-card {
     margin: 0 10vw;
+    position: relative;
 }
 
 .big-card .card-text {
@@ -379,8 +385,102 @@ body {
     border: solid #C89446 2px;
 }
 
+/*----big-card----*/
 
+.with-margin {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
 
+.text-right {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.text-right .card-text {
+    text-align: right;
+    width: 45vw;
+}
+
+.text-right .card-yellowtitle::before {
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+/*----dates----*/
+
+.recipes-dates {
+
+    display: flex;
+    align-items: flex-end;
+    flex-flow: column nowrap;
+}
+
+.recipes-dates>* {
+    width: 56vw;
+    position: relative;
+    margin: 5px 0;
+}
+
+.recipes-dates hr {
+    border: 1px solid #F2F2F2;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    font-size: 1.3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #383838;
+}
+
+.date strong {
+    font-size: 2rem;
+    font-weight: 700;
+    color: inherit;
+}
+
+.date-card {
+    padding: 10px 0;
+}
+
+.date-card .card-paragraphe {
+    margin-left: 100px;
+    font-weight: 300;
+}
+
+/*google maps*/
+.main {
+    line-height: 0;
+}
+
+.maps-iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+
+}
+
+/*----footer----*/
+
+.footer {
+    background-color: #383838;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.footer-block {
+    margin: 20px;
+}
+
+.footer-block:first-child {
+    max-width: 40vw;
+}
 
 
 @media screen and (max-width:1396px) {
