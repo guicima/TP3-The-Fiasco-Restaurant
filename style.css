@@ -44,7 +44,8 @@ html {
 
 .logo:hover,
 .nav-item:hover,
-.nav-item:active {
+.nav-item:active,
+.nav-item.active {
     color: #C89446;
 }
 
@@ -64,6 +65,10 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.recipe-page {
+    background: linear-gradient(180deg, #1c1c1c, #1c1c1c66 50%), center center / cover no-repeat url(img/salad-chicken.jpg);
 }
 
 .welcome {
