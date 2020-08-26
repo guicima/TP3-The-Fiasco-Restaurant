@@ -13,8 +13,8 @@ html {
 /*NAVBAR*/
 
 .header {
-    position: fixed;
-    width: 100vw;
+    position: absolute;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,7 @@ html {
 }
 
 .container {
-    margin: 0 16vw;
+    padding: 0 16vw;
 }
 
 .logo,
@@ -112,6 +112,7 @@ html {
     height: 450px;
     position: relative;
     top: 30px;
+    display: block;
 }
 
 /*Cards-texts*/
@@ -154,9 +155,12 @@ html {
 }
 
 .card-link::after {
-    content: ">";
-    margin-left: 5px;
-    color: #C89446;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    background: url(img/arrow-right.svg) center center / 5px 9px;
+    margin-left: 10px;
 }
 
 .card-link:hover {
@@ -287,8 +291,12 @@ html {
 }
 
 .big-card {
-    margin: 0 10vw;
+    padding: 0 10vw;
     position: relative;
+}
+
+.big-card .card {
+    align-items: flex-end;
 }
 
 .big-card .card-text {
@@ -300,6 +308,10 @@ html {
     min-height: 350px;
     width: 400px;
     background: left bottom / 150px no-repeat url("img/signature.png"), top / auto 105% no-repeat url("img/Chef.png");
+}
+
+.big-card .card-link {
+    margin-bottom: 20px;
 }
 
 /*----reservation-section----*/
@@ -334,18 +346,27 @@ html {
 .reservation-form {
     display: flex;
     margin: 50px 0;
-    width: 60vw;
     justify-content: space-between;
 }
 
 .reservation-form>* {
-    flex-basis: 18vw;
+    min-width: 260px;
     margin: 0 1vw;
     height: 40px;
     background: none;
     padding: 5px;
     border: solid #6f6f6f6f 2px;
     border-radius: 3px;
+}
+
+.select-number {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.arrow-bg {
+    background: right 10px center no-repeat url('img/arrow.png');
 }
 
 .button {
@@ -374,6 +395,7 @@ html {
     letter-spacing: 4px;
     font-weight: 600;
     font-size: .8em;
+    transition: .3s;
 }
 
 .reservation-form>*:hover {
@@ -388,19 +410,19 @@ html {
 /*----big-card----*/
 
 .with-margin {
-    margin-top: 70px;
-    margin-bottom: 70px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .text-right {
     display: flex;
     justify-content: flex-end;
-
 }
 
 .text-right .card-text {
     text-align: right;
     width: 45vw;
+    min-width: 300px;
 }
 
 .text-right .card-yellowtitle::before {
@@ -412,14 +434,15 @@ html {
 /*----dates----*/
 
 .recipes-dates {
-
+    margin-top: 50px;
     display: flex;
-    align-items: flex-end;
     flex-flow: column nowrap;
+    max-width: 900px;
+    margin-left: auto;
 }
 
 .recipes-dates>* {
-    width: 56vw;
+    width: 100%;
     position: relative;
     margin: 5px 0;
 }
@@ -467,21 +490,52 @@ html {
 }
 
 /*----footer----*/
-
 .footer {
-    background-color: #383838;
-    display: flex;
-    flex-flow: row wrap;
+    background: right bottom / 350px no-repeat url('img/splash.png'), #383838;
+    padding: 50px 10vw;
 }
 
-.footer-block {
-    margin: 20px;
+.footer-nav {
+    display: flex;
+    flex-flow: row no-wrap;
+    justify-content: space-between;
+}
+
+.footer-block>* {
+    line-height: 2.5em;
+    color: #fff;
+    margin: 5px;
 }
 
 .footer-block:first-child {
     max-width: 40vw;
 }
 
+.footer-title {
+    color: #C99649;
+}
+
+.footer-paragraphe,
+.footer-address,
+.light-text {
+    font-weight: 300;
+}
+
+.copyright,
+.copyright span {
+    color: #fff;
+}
+
+/*----Background-images----*/
+
+.main-content {
+    background: right top no-repeat url('img/oranges.jpg'),
+        left top 600px no-repeat url('img/spices.jpg');
+}
+
+.spicy-background {
+    background: left top -20px no-repeat url('img/news-bg.jpg');
+}
 
 @media screen and (max-width:1396px) {
 
@@ -489,17 +543,8 @@ html {
         justify-content: space-around;
     }
 
-    .reservation-form {
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .reservation-form>* {
-        flex-basis: unset;
-        margin: 5px;
-        width: 50%;
-        min-width: 260px;
+    .square-recipes>* {
+        margin: 20px 0;
     }
 }
 
@@ -508,6 +553,7 @@ html {
         height: auto;
         width: 30vw;
     }
+
 }
 
 @media screen and (max-width: 905px) {
@@ -570,12 +616,68 @@ html {
         margin: 0 0 20px 0;
     }
 
-    /*.card-image-chef {
-        background: left bottom / 150px no-repeat url("img/signature.png");
-    }*/
+    .card-image-chef {
+        width: 300px;
+        background: left bottom / 150px no-repeat url("img/signature.png"), top / auto 105% no-repeat url("img/Chef.png");
+        border: 2px solid #C89446;
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
 
     .big-card .card {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .big-card .text-right {
+        justify-content: flex-end;
+    }
+
+    .square-recipes .card {
+        flex-flow: column;
+    }
+
+    .square-recipes .small-card-image {
+        display: none;
+    }
+
+    .square-recipes .card-text>* {
+        padding: 10px 0;
+    }
+
+    .background-square {
+        display: none;
+    }
+
+    .reservation-form {
+        flex-direction: column;
+        height: 150px;
+        width: 50vw;
+        min-width: 260px;
+    }
+
+    .date-card .card-paragraphe {
+        margin-left: 70px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+    }
+
+    .footer-nav>* {
+
+        margin-bottom: 15px;
+    }
+
+    .footer-block:first-child {
+        max-width: 100%;
+    }
+
+    .footer-block>* {
+        line-height: 1.7em;
+    }
+
+    .copyright {
+        margin-top: 20px;
     }
 }

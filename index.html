@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <header class="header">
         <a href="index.html" class="logo">The Fiasco</a>
         <nav class="navbar">
@@ -153,9 +152,9 @@
                         common in newspapers and other periodicals. A classified is usually textually based and can
                         consist.</p>
                 </div>
-                <div class="reservation-form">
+                <div class="reservation-form ">
                     <input type="text" name="name" id="name" placeholder="Full name">
-                    <select id="table-number">
+                    <select id="table-number" class="select-number arrow-bg">
                         <option value="">For 1 person</option>
                         <option value="" selected>For 2 persons</option>
                         <option value="">For 3 persons</option>
@@ -163,19 +162,12 @@
                         <option value="">For 5 persons</option>
                         <option value="">For 6 persons</option>
                     </select>
-                    <select id="date-reservation">
-                        <option value="">13/02/18 at 8pm</option>
-                        <option value="">13/02/18 at 9pm</option>
-                        <option value="">13/02/18 at 10pm</option>
-                        <option value="">14/02/18 at 8pm</option>
-                        <option value="">14/02/18 at 9pm</option>
-                        <option value="">14/02/18 at 10pm</option>
-                    </select>
+                    <input type="date" name="date" id="date" class="date-reservation arrow-bg">
                 </div>
                 <input class="button" type="submit" value="Reserve Table">
             </div>
         </div>
-        <div class="big-card with-margin">
+        <div class="big-card with-margin spicy-background">
             <div class="card left text-right">
                 <div class="card-text">
                     <h2 class="card-yellowtitle">Recipes</h2>
@@ -206,28 +198,179 @@
             </div>
             <a href="#" class="card-link text-right">Go to our blog</a>
         </div>
-        <iframe class="maps-iframe"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.8338229686772!2d6.1718508292535645!3d49.118266998707135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDA3JzA1LjgiTiA2wrAxMCcyMC42IkU!5e0!3m2!1sfr!2sfr!4v1598266604084!5m2!1sfr!2sfr"
-            allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="maps-iframe" id="map"></div>
     </main>
     <footer class="footer">
-        <div class="footer-block">
-            <h3 class="footer-title">The Fiasco</h3>
-            <p class="footer-paragraphe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum,
-                sint corporis nostrum, possimus unde eos vitae eius quasi saepe.</p>
+        <div class="footer-nav">
+            <div class="footer-block">
+                <h3 class="footer-title">The Fiasco</h3>
+                <p class="footer-paragraphe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum,
+                    sint corporis nostrum, possimus unde eos vitae eius quasi saepe.</p>
+            </div>
+            <div class="footer-block">
+                <h3 class="footer-title">Contact info</h3>
+                <address class="footer-address">1234 Altschul, New York, NY 10027-0000</address>
+                <a href="#" class="footer-address">+1 987 654 3210</a><br>
+                <a href='#' class="footer-address">contact@thefiasco.com</a>
+            </div>
+            <div class="footer-block">
+                <h3 class="footer-title">Openings Hours</h3>
+                <p class="footer-paragraphe">Monday to Friday | 10:00AM - 11:00PM</p>
+            </div>
         </div>
-        <div class="footer-block">
-            <h3 class="footer-title">Contact info</h3>
-            <address class="footer-address">1234 Altschul, New York, NY 10027-0000</address>
-            <a href="#" class="footer-address">+1 987 654 3210</a><br>
-            <a href='#' class="footer-address">contact@thefiasco.com</a>
-        </div>
-        <div class="footer-block">
-            <h3 class="footer-title">Openings Hours</h3>
-            <p class="footer-paragraphe">Monday to Friday | 10:00AM - 11:00PM</p>
-        </div>
-        <div class="copyright">2018 THE FIASCO. All rights reserved.</div>
+        <div class="copyright">2018 THE FIASCO. <span class="light-text">All rights reserved.</span></div>
     </footer>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD86Tt5mXIWG7U3lJOVK-tffhbw_G2sRAo"></script>
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 16,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(49.119631, 6.17635), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#e9e9e9"
+                    }, {
+                        "lightness": 17
+                    }]
+                }, {
+                    "featureType": "landscape",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f5f5f5"
+                    }, {
+                        "lightness": 20
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 17
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 29
+                    }, {
+                        "weight": 0.2
+                    }]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 18
+                    }]
+                }, {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 16
+                    }]
+                }, {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f5f5f5"
+                    }, {
+                        "lightness": 21
+                    }]
+                }, {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#dedede"
+                    }, {
+                        "lightness": 21
+                    }]
+                }, {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{
+                        "visibility": "on"
+                    }, {
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 16
+                    }]
+                }, {
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "saturation": 36
+                    }, {
+                        "color": "#333333"
+                    }, {
+                        "lightness": 40
+                    }]
+                }, {
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "transit",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f2f2f2"
+                    }, {
+                        "lightness": 19
+                    }]
+                }, {
+                    "featureType": "administrative",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#fefefe"
+                    }, {
+                        "lightness": 20
+                    }]
+                }, {
+                    "featureType": "administrative",
+                    "elementType": "geometry.stroke",
+                    "stylers": [{
+                        "color": "#fefefe"
+                    }, {
+                        "lightness": 17
+                    }, {
+                        "weight": 1.2
+                    }]
+                }]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(49.119631, 6.17635),
+                map: map,
+                title: 'The Fiasco'
+            });
+        }
+    </script>
 </body>
 
 </html>
