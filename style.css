@@ -172,6 +172,52 @@ html {
     text-decoration: underline;
 }
 
+/*----Card-recipe-list----*/
+
+.ingredients-list {
+    width: 350px;
+    padding: 30px 70px 30px 90px;
+
+}
+
+.ingredients-list-item {
+    list-style: none;
+    line-height: 3em;
+    font-weight: 600;
+}
+
+.ingredients-list-item::before {
+    content: attr(value);
+    font-weight: 300;
+    position: absolute;
+    right: 90%;
+}
+
+/*----video-tutorial----*/
+
+.video-tutorial {
+    width: 540px;
+    height: 320px;
+    background: center center / cover no-repeat url(img/tutorial.jpg);
+    flex-shrink: 0;
+    margin-left: 90px;
+    box-shadow: #7f7f7f 0 0 0px;
+    transition: .3s;
+}
+
+.video-tutorial::before {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: center center / 50px no-repeat url(img/play.png), #2c2c2c80;
+    cursor: pointer;
+}
+
+.video-tutorial:hover {
+    transform: scale(105%);
+    box-shadow: #7f7f7f 0 0 30px;
+}
 
 
 /*---photo left side---*/
@@ -282,6 +328,19 @@ html {
 
 .square-recipes .card .card-yellowtitle::before {
     display: none;
+}
+
+.square-recipes.container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.square-recipes.container .card {
+    max-width: 450px;
+}
+
+.square-recipes.container .card .small-card-image {
+    height: 100%;
 }
 
 .background-square {
@@ -548,8 +607,21 @@ html {
         justify-content: space-around;
     }
 
+    .square-recipes.container .card {
+        max-width: 550px;
+    }
+
+    .square-recipes.container>* {
+        margin: 40px 0;
+    }
+
     .square-recipes>* {
         margin: 20px 0;
+    }
+
+    .video-tutorial {
+        width: 100%;
+        max-width: 540px;
     }
 }
 
@@ -557,6 +629,10 @@ html {
     .card-image {
         height: auto;
         width: 30vw;
+    }
+
+    .ingredients-list {
+        padding-bottom: 70px;
     }
 
 }
@@ -607,7 +683,8 @@ html {
 
     .main-content .card .card-image {
 
-        position: static;
+        position: relative;
+        top: 0;
         left: 0;
         right: 0;
         width: 80vw;
@@ -619,6 +696,20 @@ html {
     .recipes-list {
         transform: unset;
         margin: 0 0 20px 0;
+    }
+
+    .ingredients-list {
+        margin-left: 70px;
+    }
+
+    .ingredients-list-item::before {
+        right: unset;
+        left: -30px;
+    }
+
+    .video-tutorial {
+        margin-left: 0;
+        margin-bottom: 30px;
     }
 
     .card-image-chef {
